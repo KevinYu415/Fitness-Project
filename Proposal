@@ -1,0 +1,18 @@
+Description: 
+    Exercise schedule planner. A website that will populate exercises to do from searching a specific muscle group. An example would be if you want to work on chest, you would type chest into the search bar in which, a list of exercises will show on the page that can help grow that muscle. Then the exercise can be added onto the schedule .
+
+Stack:
+    MERN
+
+Styling: Bootstrap and Tailwind
+
+Feature List:
+    Fitness project will have functions:
+        Rotating 3D human model
+        Search function to look up different exercise
+        Create/add reps and exercise to schedule 
+        Update exercise reps on the schedule
+        Delete specific exercise on schedule 
+
+Github Link:
+    https://github.com/KevinYu415/Fitness-Project
