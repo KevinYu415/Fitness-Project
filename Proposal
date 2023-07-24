@@ -9,10 +9,11 @@ Styling: Bootstrap and Tailwind
 Feature List:
     Fitness project will have functions:
         Rotating 3D human model
-        Search function to look up different exercise
-        Create/add reps and exercise to schedule 
-        Update exercise reps on the schedule
-        Delete specific exercise on schedule 
+        Read: Search function to look up different exercise
+        Create: Create/add reps and exercise to schedule 
+        Update: Update exercise reps on the schedule
+        Delete: Delete specific exercise on schedule 
+        Validation: When adding exercise onto the schedule, form must be fully filled out such as rep counts and which day.
 
 Github Link:
     https://github.com/KevinYu415/Fitness-Project
