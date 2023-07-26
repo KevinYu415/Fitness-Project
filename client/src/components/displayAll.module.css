@@ -1,35 +1,38 @@
-/* .textColor{
-    color: green;
-} */
-.split{
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   
-    text-align: center;
-    width: 900px;
-    height: 150px;
-    border-bottom-style: solid;
-    padding: 20px;
-}
-.table{
-    display: flex;
-    /* justify-content: center; */
-    justify-content: space-between;
-    align-items: center;   
-    text-align: center;
-    width: 900px;
-    margin: 20px;
-    
-}
+/* schedule.css */
 
-.box{
-    width: 100px;
-    height: 25px;
-    border: solid;
-    box-shadow: 2px 2px;
-    
-}
-/* .center{
-    align-items: center;
-} */
+/* Flexbox container for the schedule columns */
+.schedulecontainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  /* Styling for individual schedule columns */
+  .schedulecolumn {
+    /* height: 1080px; */
+    flex: 1;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  /* Optional: Style for the table elements */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Optional: Style for the table rows and cells */
+  table tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  table td {
+    padding: 10px;
+  }
+
+  .schedulecolumn table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds some space between rows */
+  }
+  

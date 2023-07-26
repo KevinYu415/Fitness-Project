@@ -129,10 +129,34 @@ const DisplayAll = () => {
     axios.delete(`http://localhost:8000/api/calendar/${idFromBelow}`)
     .then((response) => {
       console.log(response);
-      const filteredNoteWall = Monday.filter((noteWall) => {
+      const filteredMonday = Monday.filter((noteWall) => {
         return noteWall._id !== idFromBelow;
       });
-      setMonday(filteredNoteWall);
+      const filteredTuesday = Tuesday.filter((noteWall) => {
+        return noteWall._id !== idFromBelow;
+      });
+      const filteredWednesday = Wednesday.filter((noteWall) => {
+        return noteWall._id !== idFromBelow;
+      });
+      const filteredThursday = Thursday.filter((noteWall) => {
+        return noteWall._id !== idFromBelow;
+      });
+      const filteredFriday = Friday.filter((noteWall) => {
+        return noteWall._id !== idFromBelow;
+      });
+      const filteredSaturday = Saturday.filter((noteWall) => {
+        return noteWall._id !== idFromBelow;
+      });
+      const filteredSunday = Sunday.filter((noteWall) => {
+        return noteWall._id !== idFromBelow;
+      });
+      setMonday(filteredMonday);
+      setTuesday(filteredTuesday);
+      setWednesday(filteredWednesday);
+      setThursday(filteredThursday);
+      setFriday(filteredFriday);
+      setSaturday(filteredSaturday);
+      setSunday(filteredSunday);
       navigate("/info");
     })
     .catch((err) => {
@@ -141,7 +165,7 @@ const DisplayAll = () => {
 };
 
   return (
-    <div className={styles.container}>
+    <div>
         <div className={styles.split}>
            
             {/* <div className={styles.box} >
@@ -151,15 +175,19 @@ const DisplayAll = () => {
                 <Link to="/">Home</Link>
             </div>
         </div>
-        <div className={styles.center}>
+      <div className={styles.schedulecontainer}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+              <h2>Monday</h2> 
               {Monday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                         
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
+                        
                         {/* <p>{noteWall._id}</p> */}
                         </td>
                         <td>       
@@ -168,7 +196,7 @@ const DisplayAll = () => {
                         </Link>
                         <button onClick={() => handleDeleteNoteWall(noteWall._id)}
                                 className="btn btn-danger">
-                Delete Note
+                Delete
             </button>
                         </td>
                   </tr>
@@ -177,20 +205,26 @@ const DisplayAll = () => {
             </tbody>
           </table>
         </div>
-        <div className={styles.center}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+              <h2>Tuesday</h2> 
               {Tuesday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                        
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
                             <button className="btn btn-primary">Edit</button>
                         </Link>
+                        <button onClick={() => handleDeleteNoteWall(noteWall._id)}
+                                className="btn btn-danger">
+                Delete
+            </button>
                         </td>
                   </tr>
                 );
@@ -198,21 +232,27 @@ const DisplayAll = () => {
             </tbody>
           </table>
         </div>
-        <div className={styles.center}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+              <h2>Wednesday</h2> 
               {Wednesday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                        
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
                         </td>
 
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
                             <button className="btn btn-primary">Edit</button>
                         </Link>
+                        <button onClick={() => handleDeleteNoteWall(noteWall._id)}
+                                className="btn btn-danger">
+                Delete
+            </button>
                       
                         </td>
                   </tr>
@@ -222,20 +262,26 @@ const DisplayAll = () => {
             </tbody>
           </table>
         </div>
-        <div className={styles.center}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+              <h2>Thursday</h2> 
               {Thursday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                        
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
                             <button className="btn btn-primary">Edit</button>
                         </Link>
+                        <button onClick={() => handleDeleteNoteWall(noteWall._id)}
+                                className="btn btn-danger">
+                Delete
+            </button>
                         </td>
                   </tr>
                 );
@@ -243,21 +289,26 @@ const DisplayAll = () => {
             </tbody>
           </table>
         </div>
-        <div className={styles.center}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+            <h2>Friday</h2>
               {Friday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                         
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
                             <button className="btn btn-primary">Edit</button>
                         </Link>
-                        
+                        <button onClick={() => handleDeleteNoteWall(noteWall._id)}
+                                className="btn btn-danger">
+                Delete
+            </button>
                         </td>
                   </tr>
                 );
@@ -265,20 +316,26 @@ const DisplayAll = () => {
             </tbody>
           </table>
         </div>
-        <div className={styles.center}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+            <h2>Saturday</h2>
               {Saturday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                         
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
                             <button className="btn btn-primary">Edit</button>
                         </Link>
+                        <button onClick={() => handleDeleteNoteWall(noteWall._id)}
+                                className="btn btn-danger">
+                Delete
+            </button>
                         </td>
                   </tr>
                 );
@@ -286,20 +343,26 @@ const DisplayAll = () => {
             </tbody>
           </table>
         </div>
-        <div className={styles.center}>
+        <div className={styles.schedulecolumn}>
           <table >
             <tbody>
+            <h2>Sunday</h2>
               {Sunday.map((noteWall, index) => {
                 return (
                     <tr className={styles.table} key={noteWall._id}>
-                        <td><h2>{noteWall.name}</h2>
+                        <td>
+                         
+                        <p>{noteWall.name}</p>
                         <p>{noteWall.reps}</p>
-                        <p>{noteWall.value}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
                             <button className="btn btn-primary">Edit</button>
                         </Link>
+                        <button onClick={() => handleDeleteNoteWall(noteWall._id)}
+                                className="btn btn-danger">
+                Delete
+            </button>
                         </td>
                   </tr>
                 );
@@ -308,7 +371,7 @@ const DisplayAll = () => {
           </table>
         </div>
       </div>
-
+    </div>
 
   );
 };

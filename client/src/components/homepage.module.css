@@ -1,0 +1,29 @@
+/* .upper{
+    display: flex;
+    height: 500px;
+    width: auto;
+    justify-content: center;
+} */
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set a negative z-index to put it behind other content */
+    
+  }
+  .container {
+    position: relative;
+    min-height: 100vh;
+  }
+  /* .color{
+    background-color: #888888;
+    z-index: -2;
+  } */
+  body{
+    margin: 0;
+  padding: 0;
+    background-color: #888888; /* Set your desired color as the background */
+  }

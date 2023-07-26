@@ -29,10 +29,10 @@ const EditNoteWall = (props) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:8000/api/NoteWall/${id}`, { title: repAmount , body: day})
+      .put(`http://localhost:8000/api/calendar/${id}`, { reps: repAmount , value: day})
       .then((response) => {
         console.log(response);
-        navigate("/");
+        navigate("/info");
       })
       .catch((err) => {
         console.log(err.response.data.err.errors);
@@ -42,7 +42,7 @@ const EditNoteWall = (props) => {
 
   const handleDeleteNoteWall = (idFromBelow) => {
     axios
-      .delete(`http://localhost:8000/api/NoteWall/${idFromBelow}`)
+      .delete(`http://localhost:8000/api/calendar/${idFromBelow}`)
       .then((response) => {
         console.log(response);
         const filteredNoteWall = allNoteWall.filter((noteWall) => {
@@ -66,23 +66,36 @@ const EditNoteWall = (props) => {
         </div>
       <div className={styles.inputs}>
         <div>
-            <label htmlFor="title">Note Title</label>
-            <span className={styles.textcolor}> {errors.title ? <span> {errors.title.message} </span> : null}</span> <br></br>
+            <label htmlFor="title">Reps</label>
+            <span className={styles.textcolor}> {errors.reps ? <span> {errors.reps.message} </span> : null}</span> <br></br>
             <br></br>
             <input
-            type="text"
-            id="name"
+            type="number"
+            id="repAmount"
             value={repAmount}
             onChange={(e) => setRepAmount(e.target.value)}
             />
-            <p><label htmlFor="title">Note Body</label>
-             <span className={styles.textcolor}>{errors.body ? <span > {errors.body.message} </span> : null}</span> <br></br>
+            <p>
+              {/* <label htmlFor="title">Day of week</label>
+             <span className={styles.textcolor}>{errors.value ? <span > {errors.value.message} </span> : null}</span> <br></br>
             <input
-            type="textarea"
-            id="name"
+            type="text"
+            id="day"
             value={day}
             onChange={(e) => setDay(e.target.value)}
-            /></p>
+            /> */}
+            <label htmlFor="title" class="fs-5">Day</label>
+                    <select value={day} onChange={(e) => setDay(e.target.value)}>
+                        {/* <option> </option> */}
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+            </p>
 
         
             <button type="submit" className="btn btn-primary">

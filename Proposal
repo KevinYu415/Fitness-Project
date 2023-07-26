@@ -17,3 +17,8 @@ Feature List:
 
 Github Link:
     https://github.com/KevinYu415/Fitness-Project
+
+
+    cd c:/"Program Files"/MongoDB/Server/<version_number>/bin/
+    
+    mongo.exe
