@@ -9,6 +9,7 @@ const EditNoteWall = (props) => {
     const [repAmount, setRepAmount] = useState("");
     const [day, setDay] = useState("");
     const [errors, setErrors] = useState({});
+    const [name, setName] = useState("");
 
   const navigate = useNavigate();
   console.log(id);
@@ -19,6 +20,7 @@ const EditNoteWall = (props) => {
         console.log(response.data);
         setRepAmount(response.data.reps);
         setDay(response.data.value);
+        setName(response.data.name);
       })
       .catch((err) => {
         console.log(err.response);
@@ -29,7 +31,7 @@ const EditNoteWall = (props) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:8000/api/calendar/${id}`, { reps: repAmount , value: day})
+      .put(`http://localhost:8000/api/calendar/${id}`, { reps: repAmount , day: day})
       .then((response) => {
         console.log(response);
         navigate("/info");
@@ -58,15 +60,18 @@ const EditNoteWall = (props) => {
     <form onSubmit={submitHandler}>
         <div className={styles.container}>
             <div>
-                <h1>Note</h1>
+                <h1>{day}: {name}</h1>
             </div>
             <div>
-                <Link to="/">go back home</Link>
+              <Link to="/info">Back to Schedule</Link>
+            </div>
+            <div>
+                <Link to="/exercise"> Search new Exercise </Link>
             </div>
         </div>
       <div className={styles.inputs}>
         <div>
-            <label htmlFor="title">Reps</label>
+            <label htmlFor="repAmount"class="fs-5">Reps</label>
             <span className={styles.textcolor}> {errors.reps ? <span> {errors.reps.message} </span> : null}</span> <br></br>
             <br></br>
             <input
@@ -98,7 +103,7 @@ const EditNoteWall = (props) => {
             </p>
 
         
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary ">
                 Edit Note
             </button>
 

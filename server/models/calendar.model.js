@@ -5,13 +5,14 @@ const FitnessSchema = {
     type: String,
     minLength: [2, "Name must the same as the exercise"],
   },
-  value:{
+  day:{
     type: String,
-    require: [true, "Please select a day" ],
+    enum : ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    required: [true, "Please select a day" ],
   },
   reps:{
     type: Number,
-    required: [true, "Please Insert number of reps" ],
+    required: [true, "Please insert number of reps" ],
   }
 };
 

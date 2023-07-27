@@ -1,16 +1,17 @@
-/* .upper{
+.upper{
     display: flex;
-    height: 500px;
-    width: auto;
-    justify-content: center;
-} */
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
 .background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: -1; /* Set a negative z-index to put it behind other content */
     
   }
@@ -18,12 +19,53 @@
     position: relative;
     min-height: 100vh;
   }
-  /* .color{
-    background-color: #888888;
-    z-index: -2;
+  .color{
+    padding: 10px;
+  }
+  /* body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   } */
-  body{
-    margin: 0;
-  padding: 0;
-    background-color: #888888; /* Set your desired color as the background */
+  .twoleft{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh; /* Set the container height to take up the full viewport height */
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0px 25px;
+  }
+
+  body {
+    overflow: hidden; 
+  }
+ /* styles.css */
+/* Small Box Modal */
+.small-box-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .small-box-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .validationColor{
+    color: red;
+    font-size: large;
   }

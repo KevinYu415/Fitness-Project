@@ -35,4 +35,8 @@
     flex-direction: column;
     gap: 10px; /* Adds some space between rows */
   }
+  .split{
+    display: flex;
+    justify-content: space-evenly;
+  }
   

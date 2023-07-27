@@ -1,0 +1,24 @@
+.split{
+    /* display: flex; */
+    /* background-color: #888888; */
+    align-items: center;
+    text-align: center;
+    
+}
+.back{
+    height: 100vh;
+    width: 100vh;
+}
+.half{
+    display: flex;
+    align-items: center;
+    background-color: #888888;
+    justify-content: center;
+}
+/* body {
+    overflow: hidden; 
+  } */
+  .exerciseText {
+    font-size:6rem; /* Set the desired font size (adjust as needed) */
+    text-shadow: 10px 10px 20px rgba(5, 5, 5, 10); /* Add text shadow styles */
+  }

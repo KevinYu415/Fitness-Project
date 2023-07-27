@@ -35,77 +35,77 @@ const DisplayAll = () => {
         let sundayArr = [];
                 // console.log("here", response.data);
                 for(let i of response.data){
-                  if(i.value == "Monday")
+                  if(i.day == "Monday")
                     mondayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
                     setMonday(mondayArr);
 
                 for(let i of response.data){
-                  if(i.value == "Tuesday")
+                  if(i.day == "Tuesday")
                     tuesdayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
                     setTuesday(tuesdayArr);
 
                 for(let i of response.data){
-                  if(i.value == "Wednesday")
+                  if(i.day == "Wednesday")
                     wednesdayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
                     setWednesday(wednesdayArr);
 
                 for(let i of response.data){
-                  if(i.value == "Thursday")
+                  if(i.day == "Thursday")
                     thrusdayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
                     setThursday(thrusdayArr);
 
                 for(let i of response.data){
-                  if(i.value == "Friday")
+                  if(i.day == "Friday")
                     firdayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
                     setFriday(firdayArr);
 
                 for(let i of response.data){
-                  if(i.value == "Saturday")
+                  if(i.day == "Saturday")
                     saturdayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
                     setSaturday(saturdayArr);
 
                 for(let i of response.data){
-                  if(i.value == "Sunday")
+                  if(i.day == "Sunday")
                     sundayArr.push({
                         _id: i._id , 
                         name: i.name,
-                        value: i.value, 
+                        day: i.day, 
                         reps: i.reps,
                         })
                     }
@@ -168,11 +168,11 @@ const DisplayAll = () => {
     <div>
         <div className={styles.split}>
            
-            {/* <div className={styles.box} >
-                <Link to="/notes/new">Create Event</Link>
-            </div> */}
             <div className={styles.box} >
                 <Link to="/">Home</Link>
+            </div>
+            <div className={styles.box} >
+                <Link to="/exercise">Search for more Workout</Link>
             </div>
         </div>
       <div className={styles.schedulecontainer}>
