@@ -18,6 +18,9 @@ function HomePage() {
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const [tempExercise, setTempExercise] = useState("");
+    const [tempDay, setTempDay] = useState("");
+
     // const bicep = `chest`;
     let arr=[];
 
@@ -78,7 +81,8 @@ function HomePage() {
         // setMuscle = {null};
         setIsModalOpen(true);
         //reset form
-        
+
+        setTempExercise("You have submitted "+ exercise+ " on to schedule!");
         setExercise("");
         setReps("");
         setValue("");
@@ -92,24 +96,7 @@ function HomePage() {
   
     };
 
-    const SmallBoxModal = ({ isOpen, onClose }) => {
-      return (
-        <Modal
-          isOpen={isOpen}
-          onRequestClose={onClose}
-          className="small-box-modal"
-          overlayClassName="small-box-modal-overlay"
-        >
-          <h2>Form Submitted Successfully!</h2>
-          <p>Thank you for submitting the form.</p>
-          <button onClick={onClose}>Close</button>
-        </Modal>
-      );
-    };
-
-    const closeModal = () => {
-      setIsModalOpen(false);
-    };
+   
 
   return (
     
@@ -159,7 +146,10 @@ function HomePage() {
             </div>
         </div> 
         <div>
-            <form onSubmit={handleSubmit} >                   
+            <form onSubmit={handleSubmit} >  
+              <div className={styles.submitted}>
+                {tempExercise}   
+              </div>           
               <span className={styles.validationColor}> {errors.name ? <span> {errors.name.message} </span> : null}</span> <br></br>
               <label htmlFor="exercise" class="fs-5 fw-bold">Exercise Name </label>
 
@@ -202,7 +192,6 @@ function HomePage() {
               <button className="btn btn-primary" type="submit"> Add!</button>
             </form>  
             <Link to="/info" class="fs-3 fw-bold">Schedule</Link> <br></br>
-            <SmallBoxModal isOpen={isModalOpen} onClose={closeModal} />
         </div>
       </div>
     </div>

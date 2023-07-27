@@ -165,7 +165,7 @@ const DisplayAll = () => {
 };
 
   return (
-    <div>
+    <div className={styles.backgroundColor} >
         <div className={styles.split}>
            
             <div className={styles.box} >
@@ -186,7 +186,7 @@ const DisplayAll = () => {
                         <td>
                          
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         
                         {/* <p>{noteWall._id}</p> */}
                         </td>
@@ -215,7 +215,7 @@ const DisplayAll = () => {
                         <td>
                         
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
@@ -242,7 +242,7 @@ const DisplayAll = () => {
                         <td>
                         
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         </td>
 
                         <td>       
@@ -272,7 +272,7 @@ const DisplayAll = () => {
                         <td>
                         
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
@@ -299,7 +299,7 @@ const DisplayAll = () => {
                         <td>
                          
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
@@ -326,7 +326,7 @@ const DisplayAll = () => {
                         <td>
                          
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>
@@ -353,7 +353,7 @@ const DisplayAll = () => {
                         <td>
                          
                         <p>{noteWall.name}</p>
-                        <p>{noteWall.reps}</p>
+                        <p>Reps: {noteWall.reps}</p>
                         </td>
                         <td>       
                         <Link to={`/edit/notes/${noteWall._id}`}>

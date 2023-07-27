@@ -21,6 +21,7 @@
   }
   .color{
     padding: 10px;
+    
   }
   /* body{
     
@@ -39,9 +40,9 @@
     margin: 0px 25px;
   }
 
-  body {
+  /* body {
     overflow: hidden; 
-  }
+  } */
  /* styles.css */
 /* Small Box Modal */
 .small-box-modal {
@@ -68,4 +69,11 @@
   .validationColor{
     color: red;
     font-size: large;
+  }
+
+  .submitted{
+    color: greenyellow;
+    font-size: larger;
+    font-weight: 200px;
+    border: greenyellow solid;
   }

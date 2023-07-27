@@ -19,7 +19,7 @@ const EditNoteWall = (props) => {
       .then((response) => {
         console.log(response.data);
         setRepAmount(response.data.reps);
-        setDay(response.data.value);
+        setDay(response.data.day);
         setName(response.data.name);
       })
       .catch((err) => {
@@ -57,23 +57,25 @@ const EditNoteWall = (props) => {
       });
   };
   return (
+    <div className={styles.backgroundColor}>
+    <div className={styles.centerContainer}>
+      <div className={styles.formContainer}>
     <form onSubmit={submitHandler}>
         <div className={styles.container}>
             <div>
                 <h1>{day}: {name}</h1>
             </div>
-            <div>
-              <Link to="/info">Back to Schedule</Link>
-            </div>
-            <div>
-                <Link to="/exercise"> Search new Exercise </Link>
+            {/* <div className="btn btn-primary fs-4">
+              <button><Link to="/info">Back to Schedule</Link></button>
+            </div> */}
+            <div  className="btn btn-primary fs-4">
+                <button className="primary"><Link to="/exercise"> Search new Exercise </Link></button>
             </div>
         </div>
       <div className={styles.inputs}>
         <div>
-            <label htmlFor="repAmount"class="fs-5">Reps</label>
             <span className={styles.textcolor}> {errors.reps ? <span> {errors.reps.message} </span> : null}</span> <br></br>
-            <br></br>
+            <label htmlFor="repAmount"class="fs-5">Reps</label>
             <input
             type="number"
             id="repAmount"
@@ -114,7 +116,11 @@ const EditNoteWall = (props) => {
 
         </div>
     </div>
+    
     </form>
+    </div>
+    </div>
+    </div>
   );
 };
 

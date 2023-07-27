@@ -40,3 +40,9 @@
     justify-content: space-evenly;
   }
   
+  .box{
+    font-size: 50px;
+  }
+  .backgroundColor{
+    background-color: #c8c8c8;
+  }
