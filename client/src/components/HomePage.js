@@ -31,7 +31,7 @@ function HomePage() {
         `https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`,
         {
           headers: {
-            'X-Api-Key': '', // Replace 'YOUR_API_KEY' with your actual API key
+            'X-Api-Key': 'n5ZQhgA5wDzW5zQ2hVhpFg==G8yaSl0EGm10OTk1', // Replace 'YOUR_API_KEY' with your actual API key
           },
         }
       );
