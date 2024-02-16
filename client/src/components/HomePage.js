@@ -28,10 +28,11 @@ function HomePage() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
+        // `https://api.api-ninjas.com/v1/exercises?type=${muscle}`,
         `https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`,
         {
           headers: {
-            'X-Api-Key': 'n5ZQhgA5wDzW5zQ2hVhpFg==G8yaSl0EGm10OTk1', // Replace 'YOUR_API_KEY' with your actual API key
+            'X-Api-Key': 'ARwXLgRlR0gJ46SE2M0MRTkfuPNGIQFZbRGsGu71', // Replace 'YOUR_API_KEY' with your actual API key
           },
         }
       );
@@ -125,6 +126,7 @@ function HomePage() {
                 <option value="quadriceps">Quadriceps</option>
                 <option value="traps">Traps</option>
                 <option value="triceps">Triceps</option>
+                {/* <option value="cardio">cardio</option> */}
               </select>
               {/* <input
                 type="text"
