@@ -4,7 +4,7 @@ import styles from './displayAll.module.css';
 import axios from "axios";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
-
+import { API_URL } from '../assets/APL_URL';
 
 
 const DisplayAll = () => {
@@ -20,7 +20,7 @@ const DisplayAll = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/calendar")
+      .get(API_URL)
       .then((response) => {
         console.log(response.data);
         // setAllNoteWall(response.data);
@@ -126,7 +126,7 @@ const DisplayAll = () => {
   //   }
   // }
   const handleDeleteNoteWall = (idFromBelow) => {
-    axios.delete(`http://localhost:8000/api/calendar/${idFromBelow}`)
+    axios.delete(`${API_URL}/${idFromBelow}`)
     .then((response) => {
       console.log(response);
       const filteredMonday = Monday.filter((noteWall) => {

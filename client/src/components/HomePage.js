@@ -5,6 +5,8 @@ import HumanModel from "./human";
 import styles from './homepage.module.css';
 import Human from "./human";
 import Modal from "react-modal";
+import { API_URL } from "../assets/APL_URL";
+
 function HomePage() {
 
     const [muscle, setMuscle] = useState('');
@@ -75,7 +77,7 @@ function HomePage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/calendar", { name: exercise, day: value, reps: reps})
+      .post(API_URL, { name: exercise, day: value, reps: reps})
       .then((response) => {
         console.log(response);
         // navigate("/")

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams , useNavigate} from "react-router-dom";
 import styles from './edit.module.css';
+import { API_URL } from "../assets/APL_URL";
 
 const EditNoteWall = (props) => {
     const [allNoteWall, setAllNoteWall] = useState([]);
@@ -15,7 +16,7 @@ const EditNoteWall = (props) => {
   console.log(id);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/calendar/${id}`)
+      .get(`${API_URL}/${id}`)
       .then((response) => {
         console.log(response.data);
         setRepAmount(response.data.reps);
@@ -31,7 +32,7 @@ const EditNoteWall = (props) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:8000/api/calendar/${id}`, { reps: repAmount , day: day})
+      .put(`${API_URL}/${id}`, { reps: repAmount , day: day})
       .then((response) => {
         console.log(response);
         navigate("/info");
@@ -44,7 +45,7 @@ const EditNoteWall = (props) => {
 
   const handleDeleteNoteWall = (idFromBelow) => {
     axios
-      .delete(`http://localhost:8000/api/calendar/${idFromBelow}`)
+      .delete(`${API_URL}/${idFromBelow}`)
       .then((response) => {
         console.log(response);
         const filteredNoteWall = allNoteWall.filter((noteWall) => {
